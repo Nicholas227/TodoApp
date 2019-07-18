@@ -30,7 +30,8 @@
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@types/mocha": "^5.2.5",

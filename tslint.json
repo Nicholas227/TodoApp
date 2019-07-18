@@ -1,11 +1,10 @@
 {
-  "defaultSeverity": "error",
   "extends": [
     "tslint:recommended",
     "tslint-microsoft-contrib"
   ],
   "jsRules": {},
-  "rules": {
+  "rules": { 
     "align": [true, "statements", "members", "elements"],
     "export-name": [
       true,
