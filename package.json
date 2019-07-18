@@ -1,7 +1,7 @@
 {
-  "name": "electron-react-typescript-webpack-boilerplate",
-  "version": "2.0.1",
-  "description": "Pre-configured boilerplate for Electron + React + TypeScript",
+  "name": "Todo",
+  "version": "0.0.1",
+  "description": "Todo",
   "main": "./dist/main.bundle.js",
   "scripts": {
     "start": "electron ./dist/main.bundle.js",
@@ -12,8 +12,8 @@
     "build:mac": "electron-builder build --mac --x64"
   },
   "build": {
-    "appId": "com.devtography.electron_boilerplate",
-    "productName": "Electron+React+TypeScript Boilerplate",
+    "appId": "TodoApp",
+    "productName": "Todo",
     "directories": {
       "app": "./dist/",
       "output": "./out/"
@@ -24,8 +24,8 @@
     },
     "buildVersion": "1.0.0"
   },
-  "author": "Wing Chau @Devtography",
-  "license": "MIT",
+  "author": "NW",
+  "license": "",
   "dependencies": {
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
@@ -65,20 +65,5 @@
     "typescript": "^3.2.2",
     "webpack": "^4.28.1",
     "webpack-cli": "^3.2.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Devtography/electron-react-typescript-webpack-boilerplate"
-  },
-  "keywords": [
-    "boilerplate",
-    "Electron",
-    "React",
-    "Typescript",
-    "Webpack"
-  ],
-  "bugs": {
-    "url": "https://github.com/Devtography/electron-react-typescript-webpack-boilerplate/issues"
-  },
-  "homepage": "https://github.com/Devtography/electron-react-typescript-webpack-boilerplate#readme"
+  }
 }
