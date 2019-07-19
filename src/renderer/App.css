@@ -5,3 +5,14 @@
   color: black;
   font-family: 'Times New Roman', Times, serif;
 }
+
+.test {
+    float: right; 
+}
+
+#day {
+    width: 10px;
+    outline-style: solid;
+    outline-color: black;
+    outline-width: .1px
+}

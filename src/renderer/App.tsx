@@ -31,8 +31,8 @@ export default class App extends React.Component<{}> {
                 Row 2
                 </StyledWrapper>
             <StyledWrapper>
-                Row 3
-                </StyledWrapper>
+                <Day date = {1} month = {"January"}/>
+                 </StyledWrapper>
                 </div> </div>);
     }
 }
@@ -48,7 +48,7 @@ export interface IMonthState{
     holidays?: number[];
 }
 export class Month extends React.Component<IMonthProps, IMonthState>{
-    constructor(props: IMonthProps){
+    constructor(props: IMonthProps) {
         super(props);
         this.state = {
             month: props.month,
@@ -71,7 +71,20 @@ export interface DayState {
     month: string;
 }
 export class Day extends React.Component<DayProps, DayState> {
-
+    constructor(props: DayProps) {
+        super(props);
+        this.state = {
+            date: 1,
+            month: "January",
+        }
+    }
+    render() {
+        return (
+            <div className = {this.state.date + this.state.month} id = "day">
+                <text fontSize = {1} className = "test">1</text>
+            </div>
+        );
+    }
 }
 
 export const StyledWrapper = styled.div`
