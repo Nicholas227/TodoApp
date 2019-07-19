@@ -1,7 +1,7 @@
 {
   "extends": [
     "tslint:recommended",
-    "tslint-microsoft-contrib"
+    // "tslint-microsoft-contrib"
   ],
   "jsRules": {},
   "rules": { 
