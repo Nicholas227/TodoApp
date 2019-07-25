@@ -59,11 +59,16 @@ export interface TaskState {
 export class Task extends React.Component<TaskProps, TaskState> { 
     constructor(props: TaskProps) {
         super(props);
+        this.setState
     }
 
-    render() {
-        return (<div className = "Task">
+    private _onClick = async () => {
+        
+    };
 
-        </div>);
+    render() {
+        return (<a onClick = {this._onClick}><div className = "Task">
+           {this.state.message ? this.state.message : this.props.message}
+        </div></a>);
     }
 }
