@@ -1,18 +1,64 @@
-.mainHeader {
+.subHeader {
     padding-left: 43%;
-  height: 60;
-  background-color: white;
-  color: black;
-  font-family: 'Times New Roman', Times, serif;
+    height: 60;
+    background-color: white;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.test {
+.mainHeader {
+    
+}
+
+.backButton {
+    margin-top: -60px;
+}
+
+.goBack {
+    width: 75px;
+    height: 50px;
+    background-color: rgb(53, 53, 241);
+    color: whitesmoke;
+}
+
+.text {
     float: right; 
+    top: 0;
+    font-family: 'Times New Roman';
+    color: black;
 }
 
+.Month { 
+    /* display: inline-flex; */
+}
+.col { 
+    /* display: inline-flex; */
+}
 #day {
-    width: 10px;
-    outline-style: solid;
+    /* outline-style: solid;
     outline-color: black;
-    outline-width: .1px
+    outline-width: .01px;
+    box-sizing: border-box;
+    margin: 1px */
+    width: 100px;
+    height: 100px;
+    /* padding-top: 40px; */
+    border: 1px solid black;
+    float: left;
+    margin: -1px 0 0 -1px;
+    justify-content: right;
+}
+
+#bigDay { 
+    width: 600px; 
+    height: 600px;
+    border: 2px solid black;
+}
+
+.bigText {
+    float: right; 
+    top: 0;
+    font-family: 'Times New Roman';
+    color: black;
+    font-size: 48px;
 }
