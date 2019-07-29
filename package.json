@@ -30,9 +30,11 @@
   "dependencies": {
     "@types/react": "^16.7.18",
     "@types/react-dom": "^16.0.11",
+    "@types/react-native": "^0.60.2",
     "@types/styled-components": "^4.1.18",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-native": "^0.60.4",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {

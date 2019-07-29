@@ -6,9 +6,10 @@
  * React renderer.
  */
 import * as React from 'react';
-import styled from "styled-components";
+import styled, { CSSProperties } from "styled-components";
 import "./App.css";
 import TitleBar from "./Title";
+import { ipcRenderer } from 'electron';
 
 /** React state of the App component */
 //test
@@ -21,6 +22,9 @@ export interface AppState {
     title?: JSX.Element,
     dailyPage?: boolean,
     year?: number,
+    createTask?: JSX.Element,
+    taskCreation?: boolean,
+    currentDay?: number
 }
 export default class App extends React.Component<{}, AppState> {
     /** Creates an App instance */
@@ -33,6 +37,7 @@ export default class App extends React.Component<{}, AppState> {
             title: (<TitleBar  month = "January" year = {2019}/>),
             dailyPage: false,
             year: 2019,
+            createTask: <button id="createTask" title="Create new Task" onClick={() => {this.taskCreationPage()}}>+</button>
         }
     }
 
@@ -50,6 +55,10 @@ export default class App extends React.Component<{}, AppState> {
         });
     }
 
+    public taskCreationPage() {
+        ipcRenderer.send("createTask", this.state.currentDay);
+    }
+
     // tslint:disable-next-line: typedef
     public render() {
         let secondaryUI : JSX.Element | undefined;
@@ -64,7 +73,11 @@ export default class App extends React.Component<{}, AppState> {
                 </header>
                 <div className="mainContent">
                 {this.state.ui}
-                </div> </div>);
+                {this.state.dailyPage ? this.state.createTask : undefined}
+                </div>
+                <div className= "toolbar">
+
+                </div></div>);
     }
 }
 
@@ -193,6 +206,8 @@ export interface DayState {
     month: string;
     days?: [];
     isCurrentlySelected?: boolean;
+    hovered?: boolean;
+    linkStyle?: any;
 }
 export class SmallDay extends React.Component<SmallDayProps, DayState> {
     constructor(props: SmallDayProps) {
@@ -200,15 +215,27 @@ export class SmallDay extends React.Component<SmallDayProps, DayState> {
         this.state = {
             date: 1,
             month: "January",
-
+            hovered: false,
         }
     }
     private _onClick(theDate: number) {
         this.props.changeUI(theDate);
     }
+
+    private toggleHover() {
+        const hover = this.state.hovered;
+        this.setState({hovered: !hover});
+    }
+
     render() {
+        let hoverStyle: CSSProperties;
+        if(this.state.hovered) {
+            hoverStyle = {backgroundColor: 'gray'}
+        } else {
+            hoverStyle = {backgroundColor: 'white'}
+        }
         return (
-            <a onClick = {() => this._onClick(this.props.date)}>
+            <a style = {hoverStyle} onClick = {() => this._onClick(this.props.date)} onMouseOver={() => {this.toggleHover()}}>
             <div className={"tester"} id="day">
                 <text fontSize={1} className="text">{this.props.date}</text>
             </div>
