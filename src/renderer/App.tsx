@@ -31,27 +31,30 @@ export default class App extends React.Component<{}, AppState> {
     constructor(props?: any, context?: any) {
         super(props, context);
         this.state = {
-            ui:  (  <StyledWrapper>
-            <Month month = "January" numberOfDays = {31} changeUI = {this.changeUI}/>
-            </StyledWrapper> ),
-            title: (<TitleBar  month = "January" year = {2019}/>),
+            ui: (<StyledWrapper>
+                <Month month="January" numberOfDays={31} changeUI={this.changeUI} />
+            </StyledWrapper>),
+            title: (<TitleBar month="January" year={2019} />),
             dailyPage: false,
             year: 2019,
-            createTask: <button id="createTask" title="Create new Task" onClick={() => {this.taskCreationPage()}}>+</button>
+            createTask: <button id="createTask" title="Create new Task" onClick={() => { this.taskCreationPage() }}>+</button>
         }
     }
 
     public changeUI = (theDate: number) => {
-        this.setState({ui: <BigDay date = {theDate} month = {"January"}  />, dailyPage: true,
-        title: <TitleBar isDaily = {true} month = {"January"} date = {theDate} year = {2019}/>, });
+        this.setState({
+            ui: <BigDay date={theDate} month={"January"} />, dailyPage: true,
+            title: <TitleBar isDaily={true} month={"January"} date={theDate} year={2019} />,
+        });
     }
 
     public backButton = () => {
-       this.setState({ ui:  (  <StyledWrapper>
-            <Month month = "January" numberOfDays = {31} changeUI = {this.changeUI}/>
-            </StyledWrapper> ),
+        this.setState({
+            ui: (<StyledWrapper>
+                <Month month="January" numberOfDays={31} changeUI={this.changeUI} />
+            </StyledWrapper>),
             dailyPage: false,
-            title: <TitleBar  month = "January" year = {2019}/>,
+            title: <TitleBar month="January" year={2019} />,
         });
     }
 
@@ -61,21 +64,25 @@ export default class App extends React.Component<{}, AppState> {
 
     // tslint:disable-next-line: typedef
     public render() {
-        let secondaryUI : JSX.Element | undefined;
-        if(this.state.dailyPage) {
-            secondaryUI = (<div className = "backButton"><button className={"goBack"} onClick = {this.backButton}>Go Back</button></div>);
+        let secondaryUI: JSX.Element | undefined;
+        if (this.state.dailyPage) {
+            secondaryUI = (<div className="backButton"><button className={"goBack"} onClick={this.backButton}>Go Back</button></div>);
         }
         return (
             <div className="mainApp">
-                <header className = "mainHeader">
-                {this.state.title}
-                {secondaryUI}
+                <header className="mainHeader">
+        
+                        <div className="arrow"> 
+                        </div>
+        
+                    {this.state.title}
+                    {secondaryUI}
                 </header>
                 <div className="mainContent">
-                {this.state.ui}
-                {this.state.dailyPage ? this.state.createTask : undefined}
+                    {this.state.ui}
                 </div>
-                <div className= "toolbar">
+                {this.state.dailyPage ? this.state.createTask : undefined}
+                <div className="toolbar">
 
                 </div></div>);
     }
@@ -133,8 +140,8 @@ export class Month extends React.Component<IMonthProps, IMonthState>{
         const days = [];
         for (let i = startNum; i <= stopNum; i++) {
             const theDate = initial + 7 * (i - 1);
-            if(theDate <= this.props.numberOfDays)
-            days.push(theDate);
+            if (theDate <= this.props.numberOfDays)
+                days.push(theDate);
         }
         return days;
     }
@@ -177,8 +184,8 @@ export class Month extends React.Component<IMonthProps, IMonthState>{
                 })}
             </div> */}
             {this.generateDaysList(0, 31).map((theDate) => {
-                    return <SmallDay date = {theDate} month = {this.state.month} changeUI ={this.props.changeUI}/>
-                })}
+                return <SmallDay date={theDate} month={this.state.month} changeUI={this.props.changeUI} />
+            })}
         </div>
         );
     }
@@ -224,21 +231,21 @@ export class SmallDay extends React.Component<SmallDayProps, DayState> {
 
     private toggleHover() {
         const hover = this.state.hovered;
-        this.setState({hovered: !hover});
+        this.setState({ hovered: !hover });
     }
 
     render() {
         let hoverStyle: CSSProperties;
-        if(this.state.hovered) {
-            hoverStyle = {backgroundColor: 'gray'}
+        if (this.state.hovered) {
+            hoverStyle = { backgroundColor: 'gray' }
         } else {
-            hoverStyle = {backgroundColor: 'white'}
+            hoverStyle = { backgroundColor: 'white' }
         }
         return (
-            <a style = {hoverStyle} onClick = {() => this._onClick(this.props.date)} onMouseOver={() => {this.toggleHover()}}>
-            <div className={"tester"} id="day">
-                <text fontSize={1} className="text">{this.props.date}</text>
-            </div>
+            <a style={hoverStyle} onClick={() => this._onClick(this.props.date)} onMouseOver={() => { this.toggleHover() }}>
+                <div className={"tester"} id="day">
+                    <text fontSize={1} className="text">{this.props.date}</text>
+                </div>
             </a>
         );
     }

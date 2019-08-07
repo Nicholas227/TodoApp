@@ -1,3 +1,168 @@
 .app {
   color: grey;
 }
+/*
+#BA0E33
+#180891
+#4E960A
+#8E0023
+#01626D
+*/
+/* https://css-tricks.com/re-pleasing-color-palettes/ */
+/* OR
+#173F5F
+#20639B
+#3CAEA3
+#F6D55C
+#ED553B
+*/
+html, body {
+  font-family: 'Times New Roman';
+  height: 100%;
+  margin: 0;
+  background-color: #173F5F;
+}
+.subHeader {
+  padding-left: 43%;
+  height: 5%;
+  background-color: #20639B;
+  color: white;
+  font-family: 'Times New Roman';
+}
+
+.subHeader1 {
+  padding-top: 5px;
+}
+
+.mainHeader {
+}
+
+.mainApp {
+  position: relative;
+}
+
+.mainContent {
+  overflow: visible;
+  z-index: 3;
+  position: relative;
+}
+.toolbar {
+
+}
+
+.backButton {
+  margin-top: -60px;
+}
+
+.goBack {
+  width: 75px;
+  height: 50px;
+  background-color: rgb(165, 164, 164);
+  color: whitesmoke;
+  margin-bottom: 10px;
+}
+
+.text {
+  position: relative;
+  float: right; 
+  top: 0;
+  font-family: 'Times New Roman';
+  color: black;
+}
+
+.Month {
+  margin-top: 15px;
+  margin-bottom: 10px; 
+  position: relative;
+}
+.col { 
+}
+#day {
+  position: relative;
+  /* outline-style: solid;
+  outline-color: black;
+  outline-width: .01px;
+  box-sizing: border-box;
+  margin: 1px */
+  width: 100px;
+  height: 100px;
+  /* padding-top: 40px; */
+  border: 1px solid black;
+  background-color:white;
+  color: white;
+  float: left;
+  margin: -1px 0 0 -1px;
+  justify-content: right;
+}
+#day:hover {
+  transform: scale(1.5);
+  z-index: 2147483647;
+position: relative;
+  background: white;
+}
+
+.icon {
+  /* position: relative; */
+  /* left: 80%;
+  bottom: 0%; */
+  /* transform: translate(-50%,-50%); */
+  width: 20px;
+  height: 10px;
+  cursor: pointer;
+}
+
+/* .rightButton {
+    width: 50px; 
+    height: 30px
+} */
+.arrow {
+  /* position: absolute;
+  justify-content: center;
+   top: 25px;
+   left: 80%;
+  height: 10px;
+  width: 30px;
+  color: white;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  animation: arrow 700ms linear infinite; */
+}
+/*
+.arrow::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 10px;
+  top: -12px;
+  right: -8px;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.arrow::before {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 10px;
+  top: 12px;
+  right: -8px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+  transform: rotate(-45deg);
+} */
+  
+
+
+#bigDay { 
+  color: white;
+  width: 600px; 
+  height: 600px;
+  border: 2px solid white;
+} 
+
+.bigText {
+  float: right; 
+  top: 0;
+  font-family: 'Times New Roman';
+  color: white;
+  font-size: 48px;
+}

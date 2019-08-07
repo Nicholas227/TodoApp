@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Button } from 'semantic-ui-react'
+import App from './App';
 
 export interface TitleProps {
     isDaily?: boolean,
@@ -26,13 +28,26 @@ export default class TitleBar extends React.Component<TitleProps, TitleState> {
     }
 
     render() {
+
+    const ButtonExampleLabeledIconShorthand = (
+  <div>
+    <Button className = "rightButton" content='Next' icon='right arrow' labelPosition='right' />
+  </div>
+);
+
         if(this.props.isDaily) {
             return (
-                <h1 className="subHeader"> {this.state.month + " " + this.props.date + ", " + this.props.year} </h1>
+                <div className = "subHeader">
+                <h1 className="subHeader1"> {this.state.month + " " + this.props.date + ", " + this.props.year} </h1>
+                {ButtonExampleLabeledIconShorthand}
+                </div>
             )
         } else {
         return (
-            <h1 className="subHeader"> {this.state.month + ", " + this.state.year} </h1>
+            <div className = "subHeader">
+            <h1 className="subHeader1"> {this.state.month + ", " + this.state.year} </h1>
+            {ButtonExampleLabeledIconShorthand}
+            </div>
         );
         }
     }
