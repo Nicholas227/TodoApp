@@ -34,7 +34,7 @@
     "@types/styled-components": "^4.1.18",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-native": "^0.60.4",
+    "react-native": "^0.62.3",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.87.3",
     "styled-components": "^4.3.2"
